@@ -28,7 +28,7 @@ if [[ ! -f /opt/orientdb/bin/server.sh ]]; then
   # create user and set rights
   printf "*** Creating '${ORIENTDB_USER}' user ...\n"
   sudo useradd -d ${ORIENTDB_DIR} -M -r -s /bin/false -U ${ORIENTDB_USER}
-  chown -R ${ORIENTDB_USER}:${ORIENTDB_USER} ${ORIENTDB_DIR}*
+  sudo chown -R ${ORIENTDB_USER}:${ORIENTDB_USER} ${ORIENTDB_DIR}*
   sudo chmod 775 ${ORIENTDB_DIR}/bin
   sudo chmod g+x ${ORIENTDB_DIR}/bin/*.sh
   sudo usermod -a -G ${ORIENTDB_USER} vagrant
